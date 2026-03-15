@@ -232,10 +232,10 @@ try {
 const saved = localStorage.getItem(LS_KEY);
 if (saved) {
 const parsed = JSON.parse(saved);
-return ACTIONS.map(a => ({ …a, done: parsed[a.id] || false }));
+return ACTIONS.map(a => ({ ...a, done: parsed[a.id] || false }));
 }
 } catch {}
-return ACTIONS.map(a => ({ …a, done: false }));
+return ACTIONS.map(a => ({ ...a, done: false }));
 });
 const [view, setView] = useState(“dashboard”);
 const [searchQuery, setSearchQuery] = useState(””);
@@ -250,7 +250,7 @@ localStorage.setItem(LS_KEY, JSON.stringify(obj));
 }, [actions]);
 
 const toggleAction = (id) => {
-setActions(prev => prev.map(a => a.id === id ? { …a, done: !a.done } : a));
+setActions(prev => prev.map(a => a.id === id ? { ...a, done: !a.done } : a));
 };
 
 const completedCount = actions.filter(a => a.done).length;
@@ -259,7 +259,7 @@ const totalBookmarks = CATEGORIES.reduce((sum, c) => sum + c.items.length, 0);
 
 const filteredCategories = searchQuery
 ? CATEGORIES.map(c => ({
-…c,
+...c,
 items: c.items.filter(i =>
 i.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
 i.insight.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -278,18 +278,18 @@ mono: { fontFamily: “‘JetBrains Mono’, monospace” },
 
 return (
 <div>
-<div style={{ padding: “32px 28px 0”, …s.wrap.padding ? {} : {}, maxWidth: 960, margin: “0 auto”, paddingLeft: 28, paddingRight: 28, paddingTop: 32 }}>
+<div style={{ padding: “32px 28px 0”, ...s.wrap.padding ? {} : {}, maxWidth: 960, margin: “0 auto”, paddingLeft: 28, paddingRight: 28, paddingTop: 32 }}>
 <div style={{ display: “flex”, justifyContent: “space-between”, alignItems: “flex-start”, flexWrap: “wrap”, gap: 16, marginBottom: 8 }}>
 <div>
 <h1 style={{ fontSize: 28, fontWeight: 700, margin: 0, letterSpacing: “-0.5px”, color: “#fff” }}>bookmark intel</h1>
-<p style={{ margin: “6px 0 0”, fontSize: 14, color: “#666”, …s.mono }}>{totalBookmarks} saves · {CATEGORIES.length} categories · {completedCount}/{totalCount} actions done</p>
+<p style={{ margin: “6px 0 0”, fontSize: 14, color: “#666”, ...s.mono }}>{totalBookmarks} saves · {CATEGORIES.length} categories · {completedCount}/{totalCount} actions done</p>
 </div>
 <div style={{ display: “flex”, gap: 8 }}>
 {[“dashboard”, “actions”].map(v => (
 <button key={v} onClick={() => { setView(v); setActiveCategory(null); }} style={{
 padding: “8px 16px”, borderRadius: 8, border: “1px solid “ + (view === v ? “#333” : “#1a1a1a”),
 background: view === v ? “#1a1a1a” : “transparent”, color: view === v ? “#fff” : “#666”,
-fontSize: 13, fontWeight: 500, cursor: “pointer”, …s.mono, textTransform: “uppercase”, letterSpacing: “0.5px”, transition: “all 0.2s”,
+fontSize: 13, fontWeight: 500, cursor: “pointer”, ...s.mono, textTransform: “uppercase”, letterSpacing: “0.5px”, transition: “all 0.2s”,
 }}>{v}</button>
 ))}
 </div>
@@ -299,15 +299,14 @@ fontSize: 13, fontWeight: 500, cursor: “pointer”, …s.mono, textTransform: 
 </div>
 {view === “dashboard” && !activeCategory && (
 <div style={{ marginBottom: 24 }}>
-<input type=“text” placeholder=“search bookmarks…” value={searchQuery} onChange={e => setSearchQuery(e.target.value)} style={{
+<input type=“text” placeholder=“search bookmarks...” value={searchQuery} onChange={e => setSearchQuery(e.target.value)} style={{
 width: “100%”, padding: “12px 16px”, borderRadius: 10, border: “1px solid #222”, background: “#111113”,
-color: “#E8E8E8”, fontSize: 14, …s.mono, outline: “none”, boxSizing: “border-box”,
+color: “#E8E8E8”, fontSize: 14, ...s.mono, outline: “none”, boxSizing: “border-box”,
 }} />
 </div>
 )}
 </div>
 
-```
   <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 28px 40px" }}>
     {view === "dashboard" && !activeCategory && (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
@@ -410,7 +409,6 @@ color: “#E8E8E8”, fontSize: 14, …s.mono, outline: “none”, boxSizing: �
     )}
   </div>
 </div>
-```
 
 );
 }
