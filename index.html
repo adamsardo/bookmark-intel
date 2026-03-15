@@ -32,198 +32,198 @@ const { useState, useEffect } = React;
 
 const CATEGORIES = [
 {
-id: “couch-tech”,
-label: “Couch Tech”,
-emoji: “\u{1F9E0}”,
-color: “#FF6B35”,
-description: “Avatar, voice & simulation tech for your virtual patients”,
-priority: “SHIP NOW”,
+id: "couch-tech",
+label: "Couch Tech",
+emoji: "\u{1F9E0}",
+color: "#FF6B35",
+description: "Avatar, voice & simulation tech for your virtual patients",
+priority: "SHIP NOW",
 items: [
-{ title: “Cara-3 Avatar Model”, author: “@benatanam”, url: “https://x.com/benatanam/status/2023778644179489263”, insight: “Sub-180ms avatar with micro-expressions. This IS your talking patient prototype.”, tag: “avatar” },
-{ title: “Phoenix-4 Photorealistic Humans”, author: “@tavus”, url: “https://x.com/tavus/status/2024163626765148488”, insight: “Real-time photorealistic humans with emotional expressions & active listening.”, tag: “avatar” },
-{ title: “Hume TADA \u2014 Open Source TTS”, author: “@hume_ai”, url: “https://x.com/hume_ai/status/2031401003078062578”, insight: “Open-source, 5x faster, eliminates hallucinations. Could replace ElevenLabs.”, tag: “voice” },
-{ title: “Fish Audio S2 \u2014 Open Source TTS”, author: “@FishAudio”, url: “https://x.com/FishAudio/status/2031411140820152560”, insight: “Sub-150ms latency, emotion control, multi-speaker. Open source.”, tag: “voice” },
-{ title: “PolyAI \u2014 Difficult Conversations”, author: “@polyaivoice”, url: “https://x.com/polyaivoice/status/2023789473205809309”, insight: “AI trained for hard customer calls. Competitive playbook for Couch patients that ‘fight back’.”, tag: “behaviour” },
-{ title: “Psychology-Based AI Memory”, author: “@rryssf_”, url: “https://x.com/rryssf_/status/2025307030651871631”, insight: “Memory architecture using emotional significance. Perfect for patient history that persists.”, tag: “memory” },
-{ title: “Monologue Voice-to-Text”, author: “@usemonologue”, url: “https://x.com/usemonologue/status/2023801691506942385”, insight: “Voice to text 3x faster, integrates with Claude. Could inform Couch’s session capture UX.”, tag: “voice” },
+{ title: "Cara-3 Avatar Model", author: "@benatanam", url: "https://x.com/benatanam/status/2023778644179489263", insight: "Sub-180ms avatar with micro-expressions. This IS your talking patient prototype.", tag: "avatar" },
+{ title: "Phoenix-4 Photorealistic Humans", author: "@tavus", url: "https://x.com/tavus/status/2024163626765148488", insight: "Real-time photorealistic humans with emotional expressions & active listening.", tag: "avatar" },
+{ title: "Hume TADA \u2014 Open Source TTS", author: "@hume_ai", url: "https://x.com/hume_ai/status/2031401003078062578", insight: "Open-source, 5x faster, eliminates hallucinations. Could replace ElevenLabs.", tag: "voice" },
+{ title: "Fish Audio S2 \u2014 Open Source TTS", author: "@FishAudio", url: "https://x.com/FishAudio/status/2031411140820152560", insight: "Sub-150ms latency, emotion control, multi-speaker. Open source.", tag: "voice" },
+{ title: "PolyAI \u2014 Difficult Conversations", author: "@polyaivoice", url: "https://x.com/polyaivoice/status/2023789473205809309", insight: "AI trained for hard customer calls. Competitive playbook for Couch patients that 'fight back'.", tag: "behaviour" },
+{ title: "Psychology-Based AI Memory", author: "@rryssf_", url: "https://x.com/rryssf_/status/2025307030651871631", insight: "Memory architecture using emotional significance. Perfect for patient history that persists.", tag: "memory" },
+{ title: "Monologue Voice-to-Text", author: "@usemonologue", url: "https://x.com/usemonologue/status/2023801691506942385", insight: "Voice to text 3x faster, integrates with Claude. Could inform Couch's session capture UX.", tag: "voice" },
 ],
 },
 {
-id: “funding”,
-label: “Funding”,
-emoji: “\u{1F4B0}”,
-color: “#22C55E”,
-description: “Accelerators, funds & free resources”,
-priority: “APPLY THIS WEEK”,
+id: "funding",
+label: "Funding",
+emoji: "\u{1F4B0}",
+color: "#22C55E",
+description: "Accelerators, funds & free resources",
+priority: "APPLY THIS WEEK",
 items: [
-{ title: “a16z Speedrun Alpha”, author: “@andrewchen”, url: “https://x.com/andrewchen/status/2024193683206414600”, insight: “$20K + up to $250K. EQUITY-FREE. 8 weeks. Solo founders. This is literally you.”, tag: “accelerator” },
-{ title: “AU $15M Pre-Seed Fund”, author: “@minmintymin”, url: “https://x.com/minmintymin/status/2030860709920379150”, insight: “New Australian fund for unproven ideas. Melbourne-based. Find them and apply.”, tag: “fund” },
-{ title: “$500K AI Startup Bundle”, author: “@destraynor”, url: “https://x.com/destraynor/status/2031396959240491331”, insight: “Free tools from 54 companies. Cloudflare, Replit, Linear, PostHog. Grab it.”, tag: “resources” },
-{ title: “VC Essential Reading Guide”, author: “@adelwu_”, url: “https://x.com/adelwu_/status/2024213328252604557”, insight: “Recommended reading for raising capital. Prep material for YC/a16z convos.”, tag: “knowledge” },
-{ title: “a16z + YC Big Ideas 2026”, author: “@benln”, url: “https://x.com/benln/status/2023102711210852849”, insight: “Check if edu-tech simulation or AI training is listed. Validates Couch thesis.”, tag: “validation” },
+{ title: "a16z Speedrun Alpha", author: "@andrewchen", url: "https://x.com/andrewchen/status/2024193683206414600", insight: "$20K + up to $250K. EQUITY-FREE. 8 weeks. Solo founders. This is literally you.", tag: "accelerator" },
+{ title: "AU $15M Pre-Seed Fund", author: "@minmintymin", url: "https://x.com/minmintymin/status/2030860709920379150", insight: "New Australian fund for unproven ideas. Melbourne-based. Find them and apply.", tag: "fund" },
+{ title: "$500K AI Startup Bundle", author: "@destraynor", url: "https://x.com/destraynor/status/2031396959240491331", insight: "Free tools from 54 companies. Cloudflare, Replit, Linear, PostHog. Grab it.", tag: "resources" },
+{ title: "VC Essential Reading Guide", author: "@adelwu_", url: "https://x.com/adelwu_/status/2024213328252604557", insight: "Recommended reading for raising capital. Prep material for YC/a16z convos.", tag: "knowledge" },
+{ title: "a16z + YC Big Ideas 2026", author: "@benln", url: "https://x.com/benln/status/2023102711210852849", insight: "Check if edu-tech simulation or AI training is listed. Validates Couch thesis.", tag: "validation" },
 ],
 },
 {
-id: “gtm”,
-label: “GTM & Marketing”,
-emoji: “\u{1F4E1}”,
-color: “#8B5CF6”,
-description: “Growth playbooks, marketing automation & outreach”,
-priority: “NEXT SPRINT”,
+id: "gtm",
+label: "GTM & Marketing",
+emoji: "\u{1F4E1}",
+color: "#8B5CF6",
+description: "Growth playbooks, marketing automation & outreach",
+priority: "NEXT SPRINT",
 items: [
-{ title: “Anthropic’s 1-Person Marketing”, author: “@itsolelehmann”, url: “https://x.com/itsolelehmann/status/2031308486815133905”, insight: “One person runs ALL Anthropic paid ads. Claude Code + Figma MCP + Meta API. 2hrs \u2192 15min. YOUR BLUEPRINT.”, tag: “automation” },
-{ title: “Clay Ads \u2014 $250 \u2192 $25 per Lead”, author: “@vxanand”, url: “https://x.com/vxanand/status/2029931320760009121”, insight: “Cuts LinkedIn ad costs 10x. Could replace or augment Apollo for MedReport outreach.”, tag: “ads” },
-{ title: “Startup Marketing 101”, author: “@skeptrune”, url: “https://x.com/skeptrune/status/2026453061951176956”, insight: “Consistent posting > big launch. Personal branding, field events, trend-riding.”, tag: “strategy” },
-{ title: “Google Photoshoot for Products”, author: “@samsheffer”, url: “https://x.com/samsheffer/status/2024565942831751184”, insight: “Generate product shots from a single image. Free. Use for Couch/MedReport marketing assets.”, tag: “tools” },
-{ title: “DirectMail Email Marketing”, author: “@directmailmac”, url: “https://x.com/directmailmac/status/1894526167023325532”, insight: “Mac-native email marketing app. Alternative to Mailchimp for your outreach.”, tag: “tools” },
-{ title: “Motion Design for Branding”, author: “@nasir_videos”, url: “https://x.com/nasir_videos/status/2030236685997613275”, insight: “Motion design increases engagement. Good for Couch launch videos.”, tag: “content” },
-{ title: “Paid Short Video Gigs”, author: “@toriluoo”, url: “https://x.com/toriluoo/status/2030075847613268436”, insight: “Up to $2K per 20-40s video via Newwave AI. Side income or inspo for your content.”, tag: “income” },
+{ title: "Anthropic's 1-Person Marketing", author: "@itsolelehmann", url: "https://x.com/itsolelehmann/status/2031308486815133905", insight: "One person runs ALL Anthropic paid ads. Claude Code + Figma MCP + Meta API. 2hrs \u2192 15min. YOUR BLUEPRINT.", tag: "automation" },
+{ title: "Clay Ads \u2014 $250 \u2192 $25 per Lead", author: "@vxanand", url: "https://x.com/vxanand/status/2029931320760009121", insight: "Cuts LinkedIn ad costs 10x. Could replace or augment Apollo for MedReport outreach.", tag: "ads" },
+{ title: "Startup Marketing 101", author: "@skeptrune", url: "https://x.com/skeptrune/status/2026453061951176956", insight: "Consistent posting > big launch. Personal branding, field events, trend-riding.", tag: "strategy" },
+{ title: "Google Photoshoot for Products", author: "@samsheffer", url: "https://x.com/samsheffer/status/2024565942831751184", insight: "Generate product shots from a single image. Free. Use for Couch/MedReport marketing assets.", tag: "tools" },
+{ title: "DirectMail Email Marketing", author: "@directmailmac", url: "https://x.com/directmailmac/status/1894526167023325532", insight: "Mac-native email marketing app. Alternative to Mailchimp for your outreach.", tag: "tools" },
+{ title: "Motion Design for Branding", author: "@nasir_videos", url: "https://x.com/nasir_videos/status/2030236685997613275", insight: "Motion design increases engagement. Good for Couch launch videos.", tag: "content" },
+{ title: "Paid Short Video Gigs", author: "@toriluoo", url: "https://x.com/toriluoo/status/2030075847613268436", insight: "Up to $2K per 20-40s video via Newwave AI. Side income or inspo for your content.", tag: "income" },
 ],
 },
 {
-id: “dev-tools”,
-label: “Dev Workflow”,
-emoji: “\u26A1”,
-color: “#06B6D4”,
-description: “Solo dev productivity multipliers”,
-priority: “INTEGRATE”,
+id: "dev-tools",
+label: "Dev Workflow",
+emoji: "\u26A1",
+color: "#06B6D4",
+description: "Solo dev productivity multipliers",
+priority: "INTEGRATE",
 items: [
-{ title: “Claude/Codex Debate Skill”, author: “@AseemShrey”, url: “https://x.com/AseemShrey/status/2024753461259047000”, insight: “Automated code plan review. Caught 14 issues in 3 rounds. You have no code reviewer \u2014 this IS your reviewer.”, tag: “review” },
-{ title: “Autonomous Dogfooding”, author: “@ctatedev”, url: “https://x.com/ctatedev/status/2026357704617267314”, insight: “Auto-explores your app, finds bugs, generates video reports. Instant QA for both products.”, tag: “testing” },
-{ title: “Headless Claude Guide”, author: “@alxfazio”, url: “https://x.com/alxfazio/status/2027532563544228013”, insight: “Better than Anthropic’s docs apparently. Read this for your agent workflows.”, tag: “agents” },
-{ title: “Skill Graphs > SKILL.md”, author: “@arscontexta”, url: “https://x.com/arscontexta/status/2023957499183829467”, insight: “Composable skill networks for agents. Could level up your Claude Code setup.”, tag: “agents” },
-{ title: “Codex Reasoning Levels”, author: “@LLMJunky”, url: “https://x.com/LLMJunky/status/2025594681636090237”, insight: “High reasoning for planning, low for implementation. Cost savings without quality loss.”, tag: “config” },
-{ title: “Storybook + AI Agents”, author: “@kingermayank”, url: “https://x.com/kingermayank/status/2032461930896470397”, insight: “Pixel-perfect component refinement via annotated feedback loops.”, tag: “ui” },
-{ title: “Paper Desktop for Code Agents”, author: “@stephenhaney”, url: “https://x.com/stephenhaney/status/2026348761501581620”, insight: “Code agents read/write HTML to a canvas. Reduces implementation overhead.”, tag: “tools” },
-{ title: “Streamdown Markdown Rendering”, author: “@RhysSullivan”, url: “https://x.com/RhysSullivan/status/2030539750277538250”, insight: “Great DX for markdown rendering. Useful for MedReport’s note display.”, tag: “tools” },
-{ title: “Porter \u2014 Menu Bar Dev Servers”, author: “@eduardwieandt”, url: “https://x.com/eduardwieandt/status/2027495344766947415”, insight: “See all dev server statuses at a glance. Nice QoL for juggling MedReport + Couch.”, tag: “tools” },
-{ title: “Claude Session History Analysis”, author: “@repligate”, url: “https://x.com/repligate/status/2030152757404221511”, insight: “Increase cleanupPeriodDays in settings.json to keep your Claude logs longer.”, tag: “config” },
-{ title: “Codex Review \u2014 $1 per Review”, author: “@rohanvarma”, url: “https://x.com/rohanvarma/status/2031113869666693351”, insight: “AI code review at $1 vs $25 competitors. Budget-friendly for solo dev.”, tag: “review” },
-{ title: “Discord Crawler for Signal Mining”, author: “@steipete”, url: “https://x.com/steipete/status/2030371936405188776”, insight: “Crawl Discord servers into SQLite. Use on psych student servers to validate Couch features.”, tag: “research” },
+{ title: "Claude/Codex Debate Skill", author: "@AseemShrey", url: "https://x.com/AseemShrey/status/2024753461259047000", insight: "Automated code plan review. Caught 14 issues in 3 rounds. You have no code reviewer \u2014 this IS your reviewer.", tag: "review" },
+{ title: "Autonomous Dogfooding", author: "@ctatedev", url: "https://x.com/ctatedev/status/2026357704617267314", insight: "Auto-explores your app, finds bugs, generates video reports. Instant QA for both products.", tag: "testing" },
+{ title: "Headless Claude Guide", author: "@alxfazio", url: "https://x.com/alxfazio/status/2027532563544228013", insight: "Better than Anthropic's docs apparently. Read this for your agent workflows.", tag: "agents" },
+{ title: "Skill Graphs > SKILL.md", author: "@arscontexta", url: "https://x.com/arscontexta/status/2023957499183829467", insight: "Composable skill networks for agents. Could level up your Claude Code setup.", tag: "agents" },
+{ title: "Codex Reasoning Levels", author: "@LLMJunky", url: "https://x.com/LLMJunky/status/2025594681636090237", insight: "High reasoning for planning, low for implementation. Cost savings without quality loss.", tag: "config" },
+{ title: "Storybook + AI Agents", author: "@kingermayank", url: "https://x.com/kingermayank/status/2032461930896470397", insight: "Pixel-perfect component refinement via annotated feedback loops.", tag: "ui" },
+{ title: "Paper Desktop for Code Agents", author: "@stephenhaney", url: "https://x.com/stephenhaney/status/2026348761501581620", insight: "Code agents read/write HTML to a canvas. Reduces implementation overhead.", tag: "tools" },
+{ title: "Streamdown Markdown Rendering", author: "@RhysSullivan", url: "https://x.com/RhysSullivan/status/2030539750277538250", insight: "Great DX for markdown rendering. Useful for MedReport's note display.", tag: "tools" },
+{ title: "Porter \u2014 Menu Bar Dev Servers", author: "@eduardwieandt", url: "https://x.com/eduardwieandt/status/2027495344766947415", insight: "See all dev server statuses at a glance. Nice QoL for juggling MedReport + Couch.", tag: "tools" },
+{ title: "Claude Session History Analysis", author: "@repligate", url: "https://x.com/repligate/status/2030152757404221511", insight: "Increase cleanupPeriodDays in settings.json to keep your Claude logs longer.", tag: "config" },
+{ title: "Codex Review \u2014 $1 per Review", author: "@rohanvarma", url: "https://x.com/rohanvarma/status/2031113869666693351", insight: "AI code review at $1 vs $25 competitors. Budget-friendly for solo dev.", tag: "review" },
+{ title: "Discord Crawler for Signal Mining", author: "@steipete", url: "https://x.com/steipete/status/2030371936405188776", insight: "Crawl Discord servers into SQLite. Use on psych student servers to validate Couch features.", tag: "research" },
 ],
 },
 {
-id: “design”,
-label: “Design & UI”,
-emoji: “\u{1F3A8}”,
-color: “#EC4899”,
-description: “Inspiration, components & design systems”,
-priority: “REFERENCE”,
+id: "design",
+label: "Design & UI",
+emoji: "\u{1F3A8}",
+color: "#EC4899",
+description: "Inspiration, components & design systems",
+priority: "REFERENCE",
 items: [
-{ title: “46 Design Inspiration Resources”, author: “@Abhinavstwt”, url: “https://x.com/Abhinavstwt/status/2024375170014859273”, insight: “Comprehensive list covering UI/UX, web design, landing pages, creative galleries.”, tag: “inspo” },
-{ title: “Brian Lovin’s Site”, author: “brianlovin.com”, url: “https://brianlovin.com/”, insight: “Notion design lead. Writing, projects, curated design resources. Study this.”, tag: “inspo” },
-{ title: “Good Taste in Web Design”, author: “@ybhrdwj”, url: “https://x.com/ybhrdwj/status/2027270061820657843”, insight: “Fast interactions, minimal clutter, clear copy, honest UX. Your design checklist.”, tag: “principles” },
-{ title: “AI UI Tips \u2014 Wireframes > Prompts”, author: “@om_patel5”, url: “https://x.com/om_patel5/status/2025705776434520284”, insight: “Use wireframes as visual input instead of text prompts. Unique fonts + icons = not AI slop.”, tag: “workflow” },
-{ title: “shadcn Onboarding Component”, author: “@nolansym”, url: “https://x.com/nolansym/status/2031391726942744802”, insight: “Open-source, composable onboarding. Drop into Couch’s first-session flow.”, tag: “component” },
-{ title: “HeroUI Native RC 4”, author: “@hero_ui”, url: “https://x.com/hero_ui/status/2029998051767558596”, insight: “SubMenu support, improved Slider, fixes. Mobile component library updates.”, tag: “component” },
-{ title: “Parallax in Framer”, author: “@stfnco”, url: “https://x.com/stfnco/status/2029533960418787752”, insight: “Three-click parallax effects. Good for Couch landing page polish.”, tag: “animation” },
-{ title: “Consistent Design Across Apps”, author: “@align_all”, url: “https://x.com/align_all/status/2025557407024451588”, insight: “Design language consistency = better conversion. Apply across MedReport + Couch.”, tag: “system” },
-{ title: “Small UX Details That Matter”, author: “@jakubkrehel”, url: “https://x.com/jakubkrehel/status/2031414681043186004”, insight: “Micro-interactions, subtle animations, thoughtful error handling = polish.”, tag: “details” },
-{ title: “DesEngs Resource Collection”, author: “@remvze”, url: “https://x.com/remvze/status/2031044789731237907”, insight: “Curated resources for design engineers. Bookmark of bookmarks.”, tag: “inspo” },
-{ title: “Veeso AI Design Tool”, author: “@ryolu_”, url: “https://x.com/ryolu_/status/2031065391943004510”, insight: “Ideas \u2192 editable designs without templates. Made by designers.”, tag: “tool” },
-{ title: “Wellness Tracking UI”, author: “@srotimi_ui”, url: “https://x.com/srotimi_ui/status/2025650548645732547”, insight: “Clean wellness tracking interface. Inspiration for Couch’s skill tracking dashboard.”, tag: “inspo” },
-{ title: “AI Design Presets + Prompts”, author: “@AmirMushich”, url: “https://x.com/AmirMushich/status/2026693633794076892”, insight: “10 AI typography presets with prompts + Google Fonts recs.”, tag: “tool” },
-{ title: “50 Design Prompts (ex-Warner)”, author: “@AmirMushich”, url: “https://x.com/AmirMushich/status/2019073081881293302”, insight: “50 free AI design prompts across 8 categories. Branding, mockups, apparel, type.”, tag: “tool” },
-{ title: “Building Premium UIs with AI”, author: “@starkience”, url: “https://x.com/starkience/status/2029512441306955889”, insight: “Find inspo \u2192 use Claude + skills.sh \u2192 ship better UIs.”, tag: “workflow” },
+{ title: "46 Design Inspiration Resources", author: "@Abhinavstwt", url: "https://x.com/Abhinavstwt/status/2024375170014859273", insight: "Comprehensive list covering UI/UX, web design, landing pages, creative galleries.", tag: "inspo" },
+{ title: "Brian Lovin's Site", author: "brianlovin.com", url: "https://brianlovin.com/", insight: "Notion design lead. Writing, projects, curated design resources. Study this.", tag: "inspo" },
+{ title: "Good Taste in Web Design", author: "@ybhrdwj", url: "https://x.com/ybhrdwj/status/2027270061820657843", insight: "Fast interactions, minimal clutter, clear copy, honest UX. Your design checklist.", tag: "principles" },
+{ title: "AI UI Tips \u2014 Wireframes > Prompts", author: "@om_patel5", url: "https://x.com/om_patel5/status/2025705776434520284", insight: "Use wireframes as visual input instead of text prompts. Unique fonts + icons = not AI slop.", tag: "workflow" },
+{ title: "shadcn Onboarding Component", author: "@nolansym", url: "https://x.com/nolansym/status/2031391726942744802", insight: "Open-source, composable onboarding. Drop into Couch's first-session flow.", tag: "component" },
+{ title: "HeroUI Native RC 4", author: "@hero_ui", url: "https://x.com/hero_ui/status/2029998051767558596", insight: "SubMenu support, improved Slider, fixes. Mobile component library updates.", tag: "component" },
+{ title: "Parallax in Framer", author: "@stfnco", url: "https://x.com/stfnco/status/2029533960418787752", insight: "Three-click parallax effects. Good for Couch landing page polish.", tag: "animation" },
+{ title: "Consistent Design Across Apps", author: "@align_all", url: "https://x.com/align_all/status/2025557407024451588", insight: "Design language consistency = better conversion. Apply across MedReport + Couch.", tag: "system" },
+{ title: "Small UX Details That Matter", author: "@jakubkrehel", url: "https://x.com/jakubkrehel/status/2031414681043186004", insight: "Micro-interactions, subtle animations, thoughtful error handling = polish.", tag: "details" },
+{ title: "DesEngs Resource Collection", author: "@remvze", url: "https://x.com/remvze/status/2031044789731237907", insight: "Curated resources for design engineers. Bookmark of bookmarks.", tag: "inspo" },
+{ title: "Veeso AI Design Tool", author: "@ryolu_", url: "https://x.com/ryolu_/status/2031065391943004510", insight: "Ideas \u2192 editable designs without templates. Made by designers.", tag: "tool" },
+{ title: "Wellness Tracking UI", author: "@srotimi_ui", url: "https://x.com/srotimi_ui/status/2025650548645732547", insight: "Clean wellness tracking interface. Inspiration for Couch's skill tracking dashboard.", tag: "inspo" },
+{ title: "AI Design Presets + Prompts", author: "@AmirMushich", url: "https://x.com/AmirMushich/status/2026693633794076892", insight: "10 AI typography presets with prompts + Google Fonts recs.", tag: "tool" },
+{ title: "50 Design Prompts (ex-Warner)", author: "@AmirMushich", url: "https://x.com/AmirMushich/status/2019073081881293302", insight: "50 free AI design prompts across 8 categories. Branding, mockups, apparel, type.", tag: "tool" },
+{ title: "Building Premium UIs with AI", author: "@starkience", url: "https://x.com/starkience/status/2029512441306955889", insight: "Find inspo \u2192 use Claude + skills.sh \u2192 ship better UIs.", tag: "workflow" },
 ],
 },
 {
-id: “agents”,
-label: “AI Agents”,
-emoji: “\u{1F916}”,
-color: “#F59E0B”,
-description: “Autonomous systems, agent frameworks & experiments”,
-priority: “EXPLORE (CAREFUL)”,
+id: "agents",
+label: "AI Agents",
+emoji: "\u{1F916}",
+color: "#F59E0B",
+description: "Autonomous systems, agent frameworks & experiments",
+priority: "EXPLORE (CAREFUL)",
 items: [
-{ title: “Recursively Improving OpenClaw”, author: “@Rasmic”, url: “https://x.com/Rasmic/status/2024822690008195187”, insight: “Iteratively enhancing an OpenClaw agent for real business use.”, tag: “openclaw” },
-{ title: “OpenClaw + 3D Printing”, author: “@iruletheworldmo”, url: “https://x.com/iruletheworldmo/status/2023784256900669606”, insight: “OpenClaw controlling physical devices. Cool but not your priority.”, tag: “openclaw” },
-{ title: “Librarium Multi-Search for OpenClaw”, author: “@thekitze”, url: “https://x.com/thekitze/status/2025224778878157232”, insight: “10 search providers aggregated. Good for Remy’s research capabilities.”, tag: “openclaw” },
-{ title: “Peter Steinacher on OpenClaw”, author: “@romainhuet”, url: “https://x.com/romainhuet/status/2026345766109822977”, insight: “Interview with OpenClaw creator. Background context.”, tag: “openclaw” },
-{ title: “OpenClaw Beta Testing”, author: “@testingcatalog”, url: “https://x.com/testingcatalog/status/2031529144589181046”, insight: “Multi-platform agent deployment. Slack, Discord, Teams.”, tag: “openclaw” },
-{ title: “Karpathy’s Autoresearch”, author: “@karpathy”, url: “https://x.com/karpathy/status/2030371219518931079”, insight: “AI agents autonomously optimising LLM training experiments.”, tag: “research” },
-{ title: “568 Experiments in 11 Hours”, author: “@Yuchenj_UW”, url: “https://x.com/Yuchenj_UW/status/2031423349071687878”, insight: “AI chief scientist running autonomous ML experiments across 8 GPUs.”, tag: “research” },
-{ title: “AI-Native Agency OS”, author: “@ivanboroja”, url: “https://x.com/ivanboroja/status/2027449342257205481”, insight: “Scans comms, classifies work, suggests next steps. Template for your own ops.”, tag: “ops” },
-{ title: “Pika AI Selves Documentary”, author: “@pika_labs”, url: “https://x.com/pika_labs/status/2026018992503279874”, insight: “AI Selves independently created a documentary. Relevant to your Remy setup.”, tag: “ai-selves” },
-{ title: “DeepMind Open-Sources AI Research Infra”, author: “@crazydonkey200”, url: “https://x.com/crazydonkey200/status/2030452390345036030”, insight: “Gemini improving itself via automated pre/post-training.”, tag: “research” },
-{ title: “One-Shot Hackathon”, author: “@owengretzinger”, url: “https://x.com/owengretzinger/status/2022830575820624064”, insight: “Build impressive projects with a single AI prompt. Fun challenge.”, tag: “fun” },
-{ title: “Alice Identity Prompt Anatomy”, author: “@*overment”, url: “https://x.com/*overment/status/2022983532399018346”, insight: “Prompt engineering breakdown. Could inform Couch patient persona design.”, tag: “prompting” },
-{ title: “Hidden Repository Insights Prompt”, author: “@justin_hart”, url: “https://x.com/justin_hart/status/2022699301353238970”, insight: “Deep structural audit prompt for generating novel ideas from repos.”, tag: “prompting” },
-{ title: “Reading Recommendation Prompt”, author: “@shiraeis”, url: “https://x.com/shiraeis/status/2031184788372205845”, insight: “Detailed prompt for personalised academic reading recs. Adapt for Couch content curation.”, tag: “prompting” },
-{ title: “Pi Coding Agent Extensions”, author: “@joelhooks”, url: “https://x.com/joelhooks/status/2024579156957413718”, insight: “Custom extensions with Inngest for background jobs.”, tag: “tools” },
+{ title: "Recursively Improving OpenClaw", author: "@Rasmic", url: "https://x.com/Rasmic/status/2024822690008195187", insight: "Iteratively enhancing an OpenClaw agent for real business use.", tag: "openclaw" },
+{ title: "OpenClaw + 3D Printing", author: "@iruletheworldmo", url: "https://x.com/iruletheworldmo/status/2023784256900669606", insight: "OpenClaw controlling physical devices. Cool but not your priority.", tag: "openclaw" },
+{ title: "Librarium Multi-Search for OpenClaw", author: "@thekitze", url: "https://x.com/thekitze/status/2025224778878157232", insight: "10 search providers aggregated. Good for Remy's research capabilities.", tag: "openclaw" },
+{ title: "Peter Steinacher on OpenClaw", author: "@romainhuet", url: "https://x.com/romainhuet/status/2026345766109822977", insight: "Interview with OpenClaw creator. Background context.", tag: "openclaw" },
+{ title: "OpenClaw Beta Testing", author: "@testingcatalog", url: "https://x.com/testingcatalog/status/2031529144589181046", insight: "Multi-platform agent deployment. Slack, Discord, Teams.", tag: "openclaw" },
+{ title: "Karpathy's Autoresearch", author: "@karpathy", url: "https://x.com/karpathy/status/2030371219518931079", insight: "AI agents autonomously optimising LLM training experiments.", tag: "research" },
+{ title: "568 Experiments in 11 Hours", author: "@Yuchenj_UW", url: "https://x.com/Yuchenj_UW/status/2031423349071687878", insight: "AI chief scientist running autonomous ML experiments across 8 GPUs.", tag: "research" },
+{ title: "AI-Native Agency OS", author: "@ivanboroja", url: "https://x.com/ivanboroja/status/2027449342257205481", insight: "Scans comms, classifies work, suggests next steps. Template for your own ops.", tag: "ops" },
+{ title: "Pika AI Selves Documentary", author: "@pika_labs", url: "https://x.com/pika_labs/status/2026018992503279874", insight: "AI Selves independently created a documentary. Relevant to your Remy setup.", tag: "ai-selves" },
+{ title: "DeepMind Open-Sources AI Research Infra", author: "@crazydonkey200", url: "https://x.com/crazydonkey200/status/2030452390345036030", insight: "Gemini improving itself via automated pre/post-training.", tag: "research" },
+{ title: "One-Shot Hackathon", author: "@owengretzinger", url: "https://x.com/owengretzinger/status/2022830575820624064", insight: "Build impressive projects with a single AI prompt. Fun challenge.", tag: "fun" },
+{ title: "Alice Identity Prompt Anatomy", author: "@*overment", url: "https://x.com/*overment/status/2022983532399018346", insight: "Prompt engineering breakdown. Could inform Couch patient persona design.", tag: "prompting" },
+{ title: "Hidden Repository Insights Prompt", author: "@justin_hart", url: "https://x.com/justin_hart/status/2022699301353238970", insight: "Deep structural audit prompt for generating novel ideas from repos.", tag: "prompting" },
+{ title: "Reading Recommendation Prompt", author: "@shiraeis", url: "https://x.com/shiraeis/status/2031184788372205845", insight: "Detailed prompt for personalised academic reading recs. Adapt for Couch content curation.", tag: "prompting" },
+{ title: "Pi Coding Agent Extensions", author: "@joelhooks", url: "https://x.com/joelhooks/status/2024579156957413718", insight: "Custom extensions with Inngest for background jobs.", tag: "tools" },
 ],
 },
 {
-id: “vibes”,
-label: “Vibes & Culture”,
-emoji: “\u{1F336}\uFE0F”,
-color: “#EF4444”,
-description: “Content material, memes, takes & industry drama”,
-priority: “POST ABOUT IT”,
+id: "vibes",
+label: "Vibes & Culture",
+emoji: "\u{1F336}\uFE0F",
+color: "#EF4444",
+description: "Content material, memes, takes & industry drama",
+priority: "POST ABOUT IT",
 items: [
-{ title: “Tech Boss Saves Dog with AI”, author: “@IterIntellectus”, url: “https://x.com/IterIntellectus/status/2032858964858228817”, insight: “Australian used ChatGPT + AlphaFold for custom mRNA cancer vaccine. INSANE story for your AI-in-healthcare narrative.”, tag: “content” },
-{ title: “Dario vs Sam Hand Drama”, author: “@GarrisonLovely”, url: “https://x.com/GarrisonLovely/status/2024511574916915517”, insight: “Refused to hold hands at India AI summit. Peak content.”, tag: “drama” },
-{ title: “LLMs Failing at Comedy”, author: “@theo”, url: “https://x.com/theo/status/2025810570839216171”, insight: “Quipslop live game. Good engagement content for your timeline.”, tag: “content” },
-{ title: “Silicon Valley Intro Remix”, author: “@mprado”, url: “https://x.com/mprado/status/2025744080186052940”, insight: “2020-2026 tech drama set to HBO theme. Share-worthy.”, tag: “content” },
-{ title: “Sequoia Rejection = Free ChatGPT”, author: “@jasonkneen”, url: “https://x.com/jasonkneen/status/2029887519228051666”, insight: “Consolation prize energy. Good for the ‘rejection is content’ genre.”, tag: “meme” },
-{ title: “Theo Coding at a Party”, author: “@advnt0x5”, url: “https://x.com/advnt0x5/status/2025407844158406827”, insight: “The relatable founder content. You’ve definitely been this person.”, tag: “meme” },
-{ title: “Amazon AI Bot Crashed AWS”, author: “@IntCyberDigest”, url: “https://x.com/IntCyberDigest/status/2024950760937513032”, insight: “AI autonomously deleted infrastructure. Cautionary tale for agent safety takes.”, tag: “takes” },
-{ title: “Hollywood Can’t Ban Math”, author: “@chatgpt21”, url: “https://x.com/chatgpt21/status/2024304887899504870”, insight: “AI IP take. Good for thoughtful repost with your own angle.”, tag: “takes” },
-{ title: “Brain Cells Playing Doom”, author: “@joshycodes”, url: “https://x.com/joshycodes/status/2030507412868796534”, insight: “Overhyped. Main achievement was the platform, not the gameplay. Good ‘read the paper’ take.”, tag: “takes” },
-{ title: “LMs Detect Modified Activations”, author: “@joshycodes”, url: “https://x.com/joshycodes/status/2031384687760003140”, insight: “AI safety implications. Niche but interesting for AI-literate audience.”, tag: “takes” },
-{ title: “AI on CBS Mornings”, author: “@mattshumer*”, url: “https://x.com/mattshumer*/status/2023793766587379914”, insight: “AI going mainstream media. Context for ‘the timeline is catching up’ posts.”, tag: “content” },
-{ title: “Human 3.0 Framework”, author: “@thedankoe”, url: “https://x.com/thedankoe/status/2023779299367809063”, insight: “Personal dev framework: mind, body, spirit, vocation. Self-help content inspo.”, tag: “self” },
-{ title: “MacBook Neo Take”, author: “@samhenrigold”, url: “https://x.com/samhenrigold/status/2032080638635880796”, insight: “The real value is empowering curious kids. Good framing for Couch’s mission too.”, tag: “takes” },
-{ title: “Greatness Takes Patience”, author: “@JustJake”, url: “https://x.com/JustJake/status/2029288508402311404”, insight: “Self-confidence + sustained effort. Pin-worthy.”, tag: “self” },
-{ title: “Anthropic Surveillance Concerns”, author: “@eudaemonea”, url: “https://x.com/eudaemonea/status/2027515154963763544”, insight: “AI safety vs American principles debate. Interesting as an ambassador candidate.”, tag: “takes” },
-{ title: “OpenClaw Scam Exposed”, author: “@Cobratate”, url: “https://x.com/Cobratate/status/2025909811758456892”, insight: “Fake Claude bot scam. Awareness content.”, tag: “drama” },
+{ title: "Tech Boss Saves Dog with AI", author: "@IterIntellectus", url: "https://x.com/IterIntellectus/status/2032858964858228817", insight: "Australian used ChatGPT + AlphaFold for custom mRNA cancer vaccine. INSANE story for your AI-in-healthcare narrative.", tag: "content" },
+{ title: "Dario vs Sam Hand Drama", author: "@GarrisonLovely", url: "https://x.com/GarrisonLovely/status/2024511574916915517", insight: "Refused to hold hands at India AI summit. Peak content.", tag: "drama" },
+{ title: "LLMs Failing at Comedy", author: "@theo", url: "https://x.com/theo/status/2025810570839216171", insight: "Quipslop live game. Good engagement content for your timeline.", tag: "content" },
+{ title: "Silicon Valley Intro Remix", author: "@mprado", url: "https://x.com/mprado/status/2025744080186052940", insight: "2020-2026 tech drama set to HBO theme. Share-worthy.", tag: "content" },
+{ title: "Sequoia Rejection = Free ChatGPT", author: "@jasonkneen", url: "https://x.com/jasonkneen/status/2029887519228051666", insight: "Consolation prize energy. Good for the 'rejection is content' genre.", tag: "meme" },
+{ title: "Theo Coding at a Party", author: "@advnt0x5", url: "https://x.com/advnt0x5/status/2025407844158406827", insight: "The relatable founder content. You've definitely been this person.", tag: "meme" },
+{ title: "Amazon AI Bot Crashed AWS", author: "@IntCyberDigest", url: "https://x.com/IntCyberDigest/status/2024950760937513032", insight: "AI autonomously deleted infrastructure. Cautionary tale for agent safety takes.", tag: "takes" },
+{ title: "Hollywood Can't Ban Math", author: "@chatgpt21", url: "https://x.com/chatgpt21/status/2024304887899504870", insight: "AI IP take. Good for thoughtful repost with your own angle.", tag: "takes" },
+{ title: "Brain Cells Playing Doom", author: "@joshycodes", url: "https://x.com/joshycodes/status/2030507412868796534", insight: "Overhyped. Main achievement was the platform, not the gameplay. Good 'read the paper' take.", tag: "takes" },
+{ title: "LMs Detect Modified Activations", author: "@joshycodes", url: "https://x.com/joshycodes/status/2031384687760003140", insight: "AI safety implications. Niche but interesting for AI-literate audience.", tag: "takes" },
+{ title: "AI on CBS Mornings", author: "@mattshumer*", url: "https://x.com/mattshumer*/status/2023793766587379914", insight: "AI going mainstream media. Context for 'the timeline is catching up' posts.", tag: "content" },
+{ title: "Human 3.0 Framework", author: "@thedankoe", url: "https://x.com/thedankoe/status/2023779299367809063", insight: "Personal dev framework: mind, body, spirit, vocation. Self-help content inspo.", tag: "self" },
+{ title: "MacBook Neo Take", author: "@samhenrigold", url: "https://x.com/samhenrigold/status/2032080638635880796", insight: "The real value is empowering curious kids. Good framing for Couch's mission too.", tag: "takes" },
+{ title: "Greatness Takes Patience", author: "@JustJake", url: "https://x.com/JustJake/status/2029288508402311404", insight: "Self-confidence + sustained effort. Pin-worthy.", tag: "self" },
+{ title: "Anthropic Surveillance Concerns", author: "@eudaemonea", url: "https://x.com/eudaemonea/status/2027515154963763544", insight: "AI safety vs American principles debate. Interesting as an ambassador candidate.", tag: "takes" },
+{ title: "OpenClaw Scam Exposed", author: "@Cobratate", url: "https://x.com/Cobratate/status/2025909811758456892", insight: "Fake Claude bot scam. Awareness content.", tag: "drama" },
 ],
 },
 {
-id: “misc”,
-label: “Misc Tools”,
-emoji: “\u{1F9F0}”,
-color: “#64748B”,
-description: “Odds and ends worth knowing about”,
-priority: “BOOKMARK”,
+id: "misc",
+label: "Misc Tools",
+emoji: "\u{1F9F0}",
+color: "#64748B",
+description: "Odds and ends worth knowing about",
+priority: "BOOKMARK",
 items: [
-{ title: “Chat++ iMessage Search”, author: “@pranavramesh25”, url: “https://x.com/pranavramesh25/status/2029986266805358917”, insight: “AI-powered iMessage search. Open source. Nice utility.”, tag: “app” },
-{ title: “Terminal Twitter CLI (No API Keys)”, author: “@jedisct1”, url: “https://x.com/jedisct1/status/2030962676382249415”, insight: “Access X from terminal without API keys. Useful for automation.”, tag: “tool” },
-{ title: “Prompt Saver Electron App”, author: “@LexnLin”, url: “https://x.com/LexnLin/status/2030078883404329191”, insight: “Save prompts from X and other sites. Built with Gemini 3.1 Pro.”, tag: “tool” },
-{ title: “Tamagotchi Claude Pet”, author: “@rubanlah”, url: “https://x.com/rubanlah/status/2030874360060518412”, insight: “Lives in your notch, reacts to how you treat Claude. Peak internet.”, tag: “fun” },
-{ title: “GPT 5.4 Free on Intent”, author: “@Wattenberger”, url: “https://x.com/Wattenberger/status/2030053038355009562”, insight: “Free access to latest GPT. Worth testing against Claude for Couch.”, tag: “tool” },
-{ title: “Google Maps Gemini Upgrade”, author: “@Google”, url: “https://x.com/Google/status/2032079594191261938”, insight: “Biggest Maps update in a decade. Gemini-powered nav.”, tag: “news” },
-{ title: “Zoho Workplace”, author: “@Zoho_ANZ”, url: “https://x.com/Zoho_ANZ/status/2022204409363767746”, insight: “M365 alternative without lock-in. Could save on business tools.”, tag: “tool” },
-{ title: “Amazon Music 3 Free Months”, author: “@amazonmusic”, url: “https://x.com/amazonmusic/status/2027491255492743256”, insight: “Free music. You’re a DJ. Obviously.”, tag: “music” },
-{ title: “Remotion Video Tool (Open Source)”, author: “@JNYBGR”, url: “https://x.com/JNYBGR/status/2031397738760265741”, insight: “Norway’s largest newspaper open-sourced their video production tool.”, tag: “tool” },
-{ title: “Shiori Pricing Update”, author: “@brian_lovin”, url: “https://x.com/brian_lovin/status/2032979339604857170”, insight: “You’re using this right now. MCP server, CLI, feeds, new auth.”, tag: “meta” },
-{ title: “Sandbar $23M Series A”, author: “@minafahmi”, url: “https://x.com/minafahmi/status/2031375161253900499”, insight: “Tools for augmenting individuals in an agentic world. Adjacent space.”, tag: “funding” },
-{ title: “OpenWork Joins YC”, author: “@benjaminshafii”, url: “https://x.com/benjaminshafii/status/2031528856755253418”, insight: “Open-source AI agent platform. Competitive landscape awareness.”, tag: “competitor” },
-{ title: “Model Behavior Engineer Role”, author: “@sarahmsachs”, url: “https://x.com/sarahmsachs/status/2031399612863676831”, insight: “New job title: prompts, evals, model selection, debugging. You already do this.”, tag: “career” },
-{ title: “Cluely CEO vs TechCrunch”, author: “@im_roy_lee”, url: “https://x.com/im_roy_lee/status/2031020809376932049”, insight: “Public founder drama. Study the response strategy.”, tag: “drama” },
-{ title: “10x Engineer Framework”, author: “@mdancho84”, url: “https://x.com/mdancho84/status/2023738764841894352”, insight: “Documented skills > innate talent. Systematic self-improvement.”, tag: “self” },
-{ title: “Claude Ambassador Program”, author: “@claudeai”, url: “https://x.com/claudeai/status/2029999626926076179”, insight: “You applied for this. Track it.”, tag: “personal” },
-{ title: “OpenAI Built Platform Without Code”, author: “@peterfriese”, url: “https://x.com/peterfriese/status/2025375002263257288”, insight: “Entire platform via Codex agents. Zero manual code. The future is here.”, tag: “news” },
-{ title: “Monologue Team & Design”, author: “@naveennaidu_m”, url: “https://x.com/naveennaidu_m/status/2023900749860585691”, insight: “How they built the iOS app with the right designer + studio collab.”, tag: “inspo” },
+{ title: "Chat++ iMessage Search", author: "@pranavramesh25", url: "https://x.com/pranavramesh25/status/2029986266805358917", insight: "AI-powered iMessage search. Open source. Nice utility.", tag: "app" },
+{ title: "Terminal Twitter CLI (No API Keys)", author: "@jedisct1", url: "https://x.com/jedisct1/status/2030962676382249415", insight: "Access X from terminal without API keys. Useful for automation.", tag: "tool" },
+{ title: "Prompt Saver Electron App", author: "@LexnLin", url: "https://x.com/LexnLin/status/2030078883404329191", insight: "Save prompts from X and other sites. Built with Gemini 3.1 Pro.", tag: "tool" },
+{ title: "Tamagotchi Claude Pet", author: "@rubanlah", url: "https://x.com/rubanlah/status/2030874360060518412", insight: "Lives in your notch, reacts to how you treat Claude. Peak internet.", tag: "fun" },
+{ title: "GPT 5.4 Free on Intent", author: "@Wattenberger", url: "https://x.com/Wattenberger/status/2030053038355009562", insight: "Free access to latest GPT. Worth testing against Claude for Couch.", tag: "tool" },
+{ title: "Google Maps Gemini Upgrade", author: "@Google", url: "https://x.com/Google/status/2032079594191261938", insight: "Biggest Maps update in a decade. Gemini-powered nav.", tag: "news" },
+{ title: "Zoho Workplace", author: "@Zoho_ANZ", url: "https://x.com/Zoho_ANZ/status/2022204409363767746", insight: "M365 alternative without lock-in. Could save on business tools.", tag: "tool" },
+{ title: "Amazon Music 3 Free Months", author: "@amazonmusic", url: "https://x.com/amazonmusic/status/2027491255492743256", insight: "Free music. You're a DJ. Obviously.", tag: "music" },
+{ title: "Remotion Video Tool (Open Source)", author: "@JNYBGR", url: "https://x.com/JNYBGR/status/2031397738760265741", insight: "Norway's largest newspaper open-sourced their video production tool.", tag: "tool" },
+{ title: "Shiori Pricing Update", author: "@brian_lovin", url: "https://x.com/brian_lovin/status/2032979339604857170", insight: "You're using this right now. MCP server, CLI, feeds, new auth.", tag: "meta" },
+{ title: "Sandbar $23M Series A", author: "@minafahmi", url: "https://x.com/minafahmi/status/2031375161253900499", insight: "Tools for augmenting individuals in an agentic world. Adjacent space.", tag: "funding" },
+{ title: "OpenWork Joins YC", author: "@benjaminshafii", url: "https://x.com/benjaminshafii/status/2031528856755253418", insight: "Open-source AI agent platform. Competitive landscape awareness.", tag: "competitor" },
+{ title: "Model Behavior Engineer Role", author: "@sarahmsachs", url: "https://x.com/sarahmsachs/status/2031399612863676831", insight: "New job title: prompts, evals, model selection, debugging. You already do this.", tag: "career" },
+{ title: "Cluely CEO vs TechCrunch", author: "@im_roy_lee", url: "https://x.com/im_roy_lee/status/2031020809376932049", insight: "Public founder drama. Study the response strategy.", tag: "drama" },
+{ title: "10x Engineer Framework", author: "@mdancho84", url: "https://x.com/mdancho84/status/2023738764841894352", insight: "Documented skills > innate talent. Systematic self-improvement.", tag: "self" },
+{ title: "Claude Ambassador Program", author: "@claudeai", url: "https://x.com/claudeai/status/2029999626926076179", insight: "You applied for this. Track it.", tag: "personal" },
+{ title: "OpenAI Built Platform Without Code", author: "@peterfriese", url: "https://x.com/peterfriese/status/2025375002263257288", insight: "Entire platform via Codex agents. Zero manual code. The future is here.", tag: "news" },
+{ title: "Monologue Team & Design", author: "@naveennaidu_m", url: "https://x.com/naveennaidu_m/status/2023900749860585691", insight: "How they built the iOS app with the right designer + studio collab.", tag: "inspo" },
 ],
 },
 ];
 
 const ACTIONS = [
-{ id: 1, text: “Prototype with Hume TADA or Fish Audio S2 for Couch voice”, category: “couch-tech”, urgency: “now” },
-{ id: 2, text: “Apply to a16z Speedrun Alpha”, category: “funding”, urgency: “now” },
-{ id: 3, text: “Find + apply to AU $15M pre-seed fund”, category: “funding”, urgency: “now” },
-{ id: 4, text: “Grab the $500K startup bundle”, category: “funding”, urgency: “now” },
-{ id: 5, text: “Set up Claude/Codex debate skill for code review”, category: “dev-tools”, urgency: “next” },
-{ id: 6, text: “Implement autonomous dogfooding for QA”, category: “dev-tools”, urgency: “next” },
-{ id: 7, text: “Build Anthropic’s 1-person marketing playbook”, category: “gtm”, urgency: “next” },
-{ id: 8, text: “Test Clay Ads for MedReport outreach”, category: “gtm”, urgency: “next” },
-{ id: 9, text: “Post dog mRNA story with AI-in-healthcare take”, category: “vibes”, urgency: “next” },
-{ id: 10, text: “Drop the shadcn onboarding component into Couch”, category: “design”, urgency: “next” },
+{ id: 1, text: "Prototype with Hume TADA or Fish Audio S2 for Couch voice", category: "couch-tech", urgency: "now" },
+{ id: 2, text: "Apply to a16z Speedrun Alpha", category: "funding", urgency: "now" },
+{ id: 3, text: "Find + apply to AU $15M pre-seed fund", category: "funding", urgency: "now" },
+{ id: 4, text: "Grab the $500K startup bundle", category: "funding", urgency: "now" },
+{ id: 5, text: "Set up Claude/Codex debate skill for code review", category: "dev-tools", urgency: "next" },
+{ id: 6, text: "Implement autonomous dogfooding for QA", category: "dev-tools", urgency: "next" },
+{ id: 7, text: "Build Anthropic's 1-person marketing playbook", category: "gtm", urgency: "next" },
+{ id: 8, text: "Test Clay Ads for MedReport outreach", category: "gtm", urgency: "next" },
+{ id: 9, text: "Post dog mRNA story with AI-in-healthcare take", category: "vibes", urgency: "next" },
+{ id: 10, text: "Drop the shadcn onboarding component into Couch", category: "design", urgency: "next" },
 ];
 
-const URGENCY_MAP = { now: { label: “THIS WEEK”, color: “#FF6B35” }, next: { label: “NEXT SPRINT”, color: “#8B5CF6” } };
+const URGENCY_MAP = { now: { label: "THIS WEEK", color: "#FF6B35" }, next: { label: "NEXT SPRINT", color: "#8B5CF6" } };
 
-const LS_KEY = “bookmark-intel-actions”;
+const LS_KEY = "bookmark-intel-actions";
 
 function App() {
 const [activeCategory, setActiveCategory] = useState(null);
@@ -237,8 +237,8 @@ return ACTIONS.map(a => ({ ...a, done: parsed[a.id] || false }));
 } catch {}
 return ACTIONS.map(a => ({ ...a, done: false }));
 });
-const [view, setView] = useState(“dashboard”);
-const [searchQuery, setSearchQuery] = useState(””);
+const [view, setView] = useState("dashboard");
+const [searchQuery, setSearchQuery] = useState("");
 const [expandedItem, setExpandedItem] = useState(null);
 
 useEffect(() => {
@@ -272,36 +272,36 @@ i.tag.toLowerCase().includes(searchQuery.toLowerCase())
 const activeData = activeCategory ? CATEGORIES.find(c => c.id === activeCategory) : null;
 
 const s = {
-wrap: { maxWidth: 960, margin: “0 auto”, padding: “0 28px” },
-mono: { fontFamily: “‘JetBrains Mono’, monospace” },
+wrap: { maxWidth: 960, margin: "0 auto", padding: "0 28px" },
+mono: { fontFamily: "'JetBrains Mono', monospace" },
 };
 
 return (
 <div>
-<div style={{ padding: “32px 28px 0”, ...s.wrap.padding ? {} : {}, maxWidth: 960, margin: “0 auto”, paddingLeft: 28, paddingRight: 28, paddingTop: 32 }}>
-<div style={{ display: “flex”, justifyContent: “space-between”, alignItems: “flex-start”, flexWrap: “wrap”, gap: 16, marginBottom: 8 }}>
+<div style={{ padding: "32px 28px 0", ...s.wrap.padding ? {} : {}, maxWidth: 960, margin: "0 auto", paddingLeft: 28, paddingRight: 28, paddingTop: 32 }}>
+<div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 16, marginBottom: 8 }}>
 <div>
-<h1 style={{ fontSize: 28, fontWeight: 700, margin: 0, letterSpacing: “-0.5px”, color: “#fff” }}>bookmark intel</h1>
-<p style={{ margin: “6px 0 0”, fontSize: 14, color: “#666”, ...s.mono }}>{totalBookmarks} saves · {CATEGORIES.length} categories · {completedCount}/{totalCount} actions done</p>
+<h1 style={{ fontSize: 28, fontWeight: 700, margin: 0, letterSpacing: "-0.5px", color: "#fff" }}>bookmark intel</h1>
+<p style={{ margin: "6px 0 0", fontSize: 14, color: "#666", ...s.mono }}>{totalBookmarks} saves · {CATEGORIES.length} categories · {completedCount}/{totalCount} actions done</p>
 </div>
-<div style={{ display: “flex”, gap: 8 }}>
-{[“dashboard”, “actions”].map(v => (
+<div style={{ display: "flex", gap: 8 }}>
+{["dashboard", "actions"].map(v => (
 <button key={v} onClick={() => { setView(v); setActiveCategory(null); }} style={{
-padding: “8px 16px”, borderRadius: 8, border: “1px solid “ + (view === v ? “#333” : “#1a1a1a”),
-background: view === v ? “#1a1a1a” : “transparent”, color: view === v ? “#fff” : “#666”,
-fontSize: 13, fontWeight: 500, cursor: “pointer”, ...s.mono, textTransform: “uppercase”, letterSpacing: “0.5px”, transition: “all 0.2s”,
+padding: "8px 16px", borderRadius: 8, border: "1px solid " + (view === v ? "#333" : "#1a1a1a"),
+background: view === v ? "#1a1a1a" : "transparent", color: view === v ? "#fff" : "#666",
+fontSize: 13, fontWeight: 500, cursor: "pointer", ...s.mono, textTransform: "uppercase", letterSpacing: "0.5px", transition: "all 0.2s",
 }}>{v}</button>
 ))}
 </div>
 </div>
-<div style={{ margin: “20px 0 24px”, background: “#151517”, borderRadius: 6, height: 6, overflow: “hidden” }}>
-<div style={{ height: “100%”, width: (completedCount / totalCount * 100) + “%”, background: “linear-gradient(90deg, #FF6B35, #22C55E)”, borderRadius: 6, transition: “width 0.5s cubic-bezier(0.4, 0, 0.2, 1)” }} />
+<div style={{ margin: "20px 0 24px", background: "#151517", borderRadius: 6, height: 6, overflow: "hidden" }}>
+<div style={{ height: "100%", width: (completedCount / totalCount * 100) + "%", background: "linear-gradient(90deg, #FF6B35, #22C55E)", borderRadius: 6, transition: "width 0.5s cubic-bezier(0.4, 0, 0.2, 1)" }} />
 </div>
-{view === “dashboard” && !activeCategory && (
+{view === "dashboard" && !activeCategory && (
 <div style={{ marginBottom: 24 }}>
-<input type=“text” placeholder=“search bookmarks...” value={searchQuery} onChange={e => setSearchQuery(e.target.value)} style={{
-width: “100%”, padding: “12px 16px”, borderRadius: 10, border: “1px solid #222”, background: “#111113”,
-color: “#E8E8E8”, fontSize: 14, ...s.mono, outline: “none”, boxSizing: “border-box”,
+<input type="text" placeholder="search bookmarks..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} style={{
+width: "100%", padding: "12px 16px", borderRadius: 10, border: "1px solid #222", background: "#111113",
+color: "#E8E8E8", fontSize: 14, ...s.mono, outline: "none", boxSizing: "border-box",
 }} />
 </div>
 )}
@@ -413,7 +413,7 @@ color: “#E8E8E8”, fontSize: 14, ...s.mono, outline: “none”, boxSizing: �
 );
 }
 
-ReactDOM.createRoot(document.getElementById(“root”)).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 
 </body>
